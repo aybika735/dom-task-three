@@ -1,0 +1,58 @@
+<html>
+    <head>
+      <title>интукод</title>
+    </head>
+    <body>
+      <div id="main">
+          <ul id="list">
+              <li>html</li>
+              <li>css</li>
+          </ul>
+      </div>
+        <div id="copyright">(c) INTOCODE</div>
+        <script>
+
+// Функция которая добавит внутрь body (до блока div) заголовок с текстом “Работа с DOM”.
+const header = () =>{
+    const h1 = document.createElement('h1');
+    h1.textContent='Работа с DOM';
+    document.body.prepend(h1);
+     }
+     header();
+// Функция которая добавит внутрь div#main в самый конец ссылку на статью о DOM.
+const link = ()=>{
+    const main = document.querySelector('#main')
+    let link = "https://learn.javascript.ru/dom-nodes";
+    const a = document.createElement('a');
+    let text = 'ссылка на DOM';
+    a.append(text);
+    a.href = link;
+    main.append(a);
+
+}
+link();
+// Функция которая принимает один параметр - название цвета - и меняет фоновый цвет всего документа на переданный в функцию.
+
+const color = (red)=>{
+   document.body.style.backgroundColor = red;
+}
+color('red');
+// Функция которая принимает один параметр - текст - и добавляет в конец списка #list новый элемент li c текстом переданным в функцию.
+const text = (text)=>{
+    const list = document.querySelector('#list');
+    const li = document.createElement('li');
+    li.append(text);
+    list.append(li);
+}
+text("Maybe I will be frontend-developer");
+
+// Функция которая удаляет блок с копирайтом (#copyright).
+const deleted = () => {
+    const div = document.querySelector('#copyright');
+    div.remove();
+
+}
+deleted();
+        </script>
+    </body>
+    </html>
